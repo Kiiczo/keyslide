@@ -1,31 +1,23 @@
-lower = ["`1234567890-=",
+rows = ["`1234567890-=",
 "qwertyuiop[]\\",
 "asdfghjkl;'",
-"zxcvbnm,./"]
-
-upper = [
+"zxcvbnm,./",
 "~!@#$%^&*()_+",
 "QWERTYUIOP{}|",
 "ASDFGHJKL:",
 "ZXCVBNM<>?"]
 
+keysMap = {}
+for row in rows:
+    i = 0
+    length = len(row)
+    for letter in row:
+        keysMap[letter] = [row, length, i]
+        i+=1
+
 def encrypt(text, key):
     output = ""
     for letter in text:
-        for i in lower:
-            for j in range(len(i)):
-                if i[j] == letter:
-                    k = j + key
-                    while k >= len(i):
-                        k = k - len(i)
-                    output+=i[k]
-                    break
-        for i in upper:
-            for j in range(len(i)):
-                if i[j] == letter:
-                    k = j + key
-                    while k >= len(i):
-                        k = k - len(i)
-                    output+=i[k]
-                    break
+        info = keysMap.get(letter)
+        output+=info[0][(info[2]+key)%length]
     return output
