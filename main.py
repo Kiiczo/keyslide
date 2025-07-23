@@ -21,3 +21,6 @@ def encrypt(text, key):
         info = keysMap.get(letter)
         output+=info[0][(info[2]+key)%length]
     return output
+
+def decrypt(text, key):
+    return encrypt(text,-key)
