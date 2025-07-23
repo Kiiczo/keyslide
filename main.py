@@ -16,7 +16,19 @@ def encrypt(text, key):
         for i in lower:
             for j in range(len(i)):
                 if i[j] == letter:
-                    output+=i[j+key]
+                    k = j + key
+                    while k >= len(i):
+                        k = k - len(i)
+                    output+=i[k]
+                    break
+        for i in upper:
+            for j in range(len(i)):
+                if i[j] == letter:
+                    k = j + key
+                    while k >= len(i):
+                        k = k - len(i)
+                    output+=i[k]
+                    break
     return output
 
-print(encrypt("i",2))
+print(encrypt("haslo",-9))
