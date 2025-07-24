@@ -21,7 +21,7 @@ def encrypt(text, key):
     output = ""
     for letter in text:
         info = keysMap.get(letter)
-        output+=info[0][(info[2]+key)%length]
+        output+=info[0][(info[2]+key)%info[1]]
     return output
 
 def decrypt(text, key):
