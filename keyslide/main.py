@@ -1,3 +1,5 @@
+import sys
+
 rows = ["`1234567890-=",
 "qwertyuiop[]\\",
 "asdfghjkl;'",
@@ -24,3 +26,6 @@ def encrypt(text, key):
 
 def decrypt(text, key):
     return encrypt(text,-key)
+
+def cli_encrypt():
+    print(encrypt(sys.argv[1], int(sys.argv[2])))

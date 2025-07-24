@@ -1,1 +1,1 @@
-from .main import encrypt, decrypt
+from .main import encrypt, decrypt, cli_encrypt
