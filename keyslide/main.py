@@ -29,3 +29,6 @@ def decrypt(text, key):
 
 def cli_encrypt():
     print(encrypt(sys.argv[1], int(sys.argv[2])))
+
+def cli_decrypt():
+    print(decrypt(sys.argv[1], int(sys.argv[2])))
