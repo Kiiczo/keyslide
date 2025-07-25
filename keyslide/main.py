@@ -20,8 +20,11 @@ for row in rows:
 def encrypt(text, key):
     output = ""
     for letter in text:
-        info = keysMap.get(letter)
-        output+=info[0][(info[2]+key)%info[1]]
+        if letter in keysMap:
+            info = keysMap.get(letter)
+            output += info[0][(info[2] + key) % info[1]]
+        else:
+            output+=letter
     return output
 
 def decrypt(text, key):
