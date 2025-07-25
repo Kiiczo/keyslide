@@ -42,15 +42,15 @@ print(plain)   # Should print: Hello, World!
 Encrypt:
 
 ```bash
-keyslide.encrypt "Hello, World!" 2
+keyslide.encrypt "Hello, World!" 1
 ```
 _Output:_  
-`Jrnno, Ynrce!`
+`Jr;;p. Ept;f@`
 
 Decrypt:
 
 ```bash
-keyslide.decrypt "Jrnno, Ynrce!" 2
+keyslide.decrypt "Jr;;p. Ept;f@" 1
 ```
 _Output:_  
 `Hello, World!`
